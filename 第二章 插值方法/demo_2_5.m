@@ -23,7 +23,7 @@ for n = 2  : 10
     plot(xi,yt,'r-', xi,yi,'b-','LineWidth',2);
     hold on;
     plot(X,Y,'bo','LineWidth',2,'markersize',12);
-    plot(X,Y,'g-','LineWidth',2,'markersize',12);
+    %plot(X,Y,'g-','LineWidth',2,'markersize',12);
     hold off;
     %axis([-5,5,-1,2]);
     tit = ['n=',int2str(n)];

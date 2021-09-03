@@ -20,7 +20,8 @@ for i = 0 : 19
         y(j,1) = (b(j) - sum(A_(j,:)*x))/A(j,j);  % Jacobi迭代公式(分量形式)
     end
 
-    if (max(abs(x - y)) < tol)
+%     if (max(abs(x - y)) < tol)
+    if (norm(x-y) < tol)
         fprintf('迭代次数: %d\n', i);
         fprintf('方程组的根: %10.8f\n', y);
         break;

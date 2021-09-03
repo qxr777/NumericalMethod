@@ -11,16 +11,16 @@ x2 = 0.8611363;   %Gauss点
 A1 = 0.6521452;   %Gauss系数
 A2 = 0.3478548;   %Gauss系数
 I_gl = (pi/4) * (A2 * g(-x2) + A1 * g(-x1) + A1 * g(x1) + A2 * g(x2));
-fprintf('4点高斯-勒让德求积结果 = %f\n', I_gl);
+fprintf('4点高斯-勒让德求积结果 = %.8f\n', I_gl);
 
 %  Newton-Cotes求积公式
 X = a : (b-a)/3 : b;
 Y = f(X);
 A = [1/8, 3/8, 3/8, 1/8];  % n=3时Newton-Cotes系数
 I_nc = (b - a) * sum(A .* Y);
-fprintf('4点Newton-Cotes求积结果 = %f\n', I_nc);
+fprintf('4点Newton-Cotes求积结果 = %.8f\n', I_nc);
 
 % 精确值
 I = integral(f, a, b);
-fprintf('Matlab函数求积结果 = %f\n', I);
+fprintf('Matlab函数求积结果 = %.8f\n', I);
 

@@ -35,7 +35,8 @@ while(0 == 0)
     y_fitting = polyval(pa, x);   % 多项式求值
     
     %plot(xlist, ylist, 'o', x, y, [xl xr], [0 0], 'k', [0 0], [yb yt], 'k', x_newton, y_newton, x, y_fitting);  
-    plot(xlist, ylist, 'o', [xl xr], [0 0], 'k', [0 0], [yb yt], 'k', x, y_fitting);  
+    plot(xlist, ylist, 'o', [xl xr], [0 0], 'k', [0 0], [yb yt], 'k', x_newton, y_newton, x, y_fitting);  
+    %plot(xlist, ylist, 'o', [xl xr], [0 0], 'k', [0 0], [yb yt], 'k', x, y_fitting);  
     title('牛顿插值、分段线性插值、曲线拟合演示');
     axis([xl xr yb yt]); grid on;
 end

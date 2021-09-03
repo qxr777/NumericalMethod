@@ -56,7 +56,7 @@ while (flag)
                     S1 = S2;
                 else
                     flag = false;
-                    fprintf('Romber算法求数值积分 计算结果：%f\n',R2);
+                    fprintf('Romber算法求数值积分 计算结果：%.10f\n',R2);
                 end
             end
         end
