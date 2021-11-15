@@ -1,0 +1,29 @@
+a=2;b=5;
+fun=@(x)exp(-x).*sin(x)+cos(x)+2;
+xn=linspace(a,b);
+subplot(2,1,1)
+fplot(fun,[a-1,b+1])
+hold on
+plot([a,b],fun([a,b]),'k.','markersize',20)
+plot([a,a,b,b],[0,fun([a,b]),0],'k')
+fill([xn,a],fun([xn,a]),[0.8,0.8,0.8],'edgecolor','none')
+alpha(0.5)
+text([a,b],fun([a,b]),{'$$(a,f(a))$$','$$(b,f(b))$$'},...
+    'interpreter','latex','fontsize',12,'hor','right','ver','bottom')
+title('梯形求积')
+subplot(2,1,2)
+fplot(fun,[a-1,b+1])
+hold on
+[x0,A]=gausscoef(a,b,2);
+y=lagrange_interp(x0,fun(x0),[a,b]);
+plot([a,b,a,b],[fun([a,b]),y],'k.','markersize',20)
+plot([a,b],y,'k','markersize',20)
+plot([a,a],[0,fun(a)],'k')
+plot([b,b],[0,fun(b)],'k')
+plot(x0,fun(x0),'ro')
+fill([xn,b,a],[fun(xn),fliplr(y)],[0.8,0.8,0.8],'edgecolor','none')
+alpha(0.5)
+text([a,b,x0],fun([a,b,x0]),{'$$(a,f(a))$$','$$(b,f(b))$$',...
+    '$$(x_0,f(x_0))$$','$$(x_1,f(x_1))$$'},...
+    'interpreter','latex','fontsize',12,'hor','right','ver','bottom')
+title('两点Gauss求积')
